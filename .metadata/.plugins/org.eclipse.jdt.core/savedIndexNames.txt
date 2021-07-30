@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\Manu\Desktop\Curso Java con Aepi\.metadata\.plugins\org.eclipse.jdt.core
+2968006258.index
+2438898336.index
+297535259.index
+2806556559.index

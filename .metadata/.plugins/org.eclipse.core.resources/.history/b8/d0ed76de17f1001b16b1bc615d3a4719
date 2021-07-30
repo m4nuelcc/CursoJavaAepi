@@ -1,0 +1,48 @@
+package dni;
+
+import java.util.Scanner;
+
+public class Dni {
+    
+    static char[] letras = "TRWAGMYFPDXBNJZSQVHLCKE".toCharArray();
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Dime un dni: ");
+        String dni = sc.nextLine();
+        sc.close();
+              
+        if (esDniValido(dni)) {
+            System.out.println("Es correcto");
+        } else {
+            System.out.println("No es correcto");
+        }
+        
+    }
+    
+    public static boolean esDniValido(String dni) {
+        int numero = obtenerNumerosDni(dni);
+        char letra = letras[numero % 23];
+        
+        /*
+        if (letra == dni.charAt(8)) {
+            return true;
+        } else {
+            return false;
+        }*/        
+        
+        return letra == dni.charAt(8);
+    }
+    
+    private static int obtenerNumerosDni(String dni) {
+        String numero = "";
+        
+        for (byte indice = 0; indice < dni.length() - 1; indice++) {
+            numero += dni.charAt(indice);
+        }
+        
+        return Integer.parseInt(dni);
+    }
+    
+}
